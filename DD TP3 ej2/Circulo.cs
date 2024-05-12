@@ -38,7 +38,7 @@ namespace DD_TP3_ej2
             return 2 * Math.PI * radio;
         }
 
-        public override string mostrar()
+        public string mostrar() //Cambiar a ToString
         {
             return $"Radio: {radio}";
         }

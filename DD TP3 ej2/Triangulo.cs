@@ -73,7 +73,7 @@ namespace DD_TP3_ej2
         {
             return (baseTriangulo * altura) / 2;
         }
-        public override string mostrar()
+        public string mostrar() //Cambiar a ToString
         {
             return $"Base: {baseTriangulo} Altura: {altura} lado1: {lado1} lado2: {lado2}";
         }

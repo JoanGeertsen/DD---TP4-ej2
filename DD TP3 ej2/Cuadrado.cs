@@ -39,7 +39,7 @@ namespace DD_TP3_ej2
             return lado * 2 + lado * 2;
         }
 
-        public override string mostrar()
+        public string mostrar() //Cambiar a ToString
         {
             return $"Lado: {lado}";
         }
