@@ -35,14 +35,14 @@ namespace DD_TP3_ej2
 
         private void bArea_Click(object sender, EventArgs e)
         {
-            if (obtenerYValidarIndex(out int i)) ;
-                //MessageBox.Show($"El área es: {a[i].area()}cm²", "Resultado:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (obtenerYValidarIndex(out int i)) 
+                MessageBox.Show($"El área es: {listFiguras[i].area()}cm²", "Resultado:", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void bPerimetro_Click(object sender, EventArgs e)
         {
             if (obtenerYValidarIndex(out int i)) ;
-                //MessageBox.Show($"El perímetro es: {a[i].perimetro()}cm", "Resultado:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"El perímetro es: {listFiguras[i].perimetro()}cm", "Resultado:", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void actualizarGruposVisibles(GroupBox gb, Label l)
@@ -61,14 +61,10 @@ namespace DD_TP3_ej2
             else if (rbTriangulo.Checked) t= typeof(Triangulo);
             else if (rbRectangulo.Checked) t= typeof(Rectangulo);
 
-
-
             lbFiguras.Items.Clear();
             foreach (Figura f in listFiguras)            
                 if(f.GetType() == t)
-                    lbFiguras.Items.Add(f.ToString());
-            
-                
+                    lbFiguras.Items.Add(f.ToString());             
         }
         private void bAgregar_Click(object sender, EventArgs e)
         {
