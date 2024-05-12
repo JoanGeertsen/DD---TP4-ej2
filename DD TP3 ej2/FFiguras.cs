@@ -6,12 +6,14 @@ namespace DD_TP3_ej2
     public partial class FFiguras : Form
     {
         #region Atributos
-        private List<Figura> listFiguras;   
+        private List<Figura> listFiguras;
+        private int cantCirculos; private int cantCuadrados; private int cantTriangulos; private int cantRectangulos;
         #endregion
         public FFiguras()
         {
             InitializeComponent();
-            listFiguras = new List<Figura>();            
+            listFiguras = new List<Figura>();         
+            cantCirculos = 0; cantCuadrados = 0; cantTriangulos = 0; cantRectangulos = 0;
         }
 
         #region Funcionalidades
@@ -62,8 +64,7 @@ namespace DD_TP3_ej2
             lbFiguras.Items.Clear();
             foreach (Figura f in listFiguras)            
                 if(f.GetType() == t)
-                    lbFiguras.Items.Add(f.ToString());
-            lCantidadFiguras.Text = $"Cantidad de Figuras: {listFiguras.Count}";
+                    lbFiguras.Items.Add(f.ToString());            
         }
         private void bAgregar_Click(object sender, EventArgs e)
         {
@@ -75,7 +76,7 @@ namespace DD_TP3_ej2
                     MessageBox.Show("El radio ingresado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tRadioCirculo.Focus();
                 }
-                else fNueva = new Circulo(double.Parse(tRadioCirculo.Text));
+                else { fNueva = new Circulo(double.Parse(tRadioCirculo.Text)); lCantidadCirculos.Text = $"Cantidad de Circulos: {++cantCirculos}"; }
             }
             else if (rbCuadrado.Checked)
             {
@@ -84,7 +85,7 @@ namespace DD_TP3_ej2
                     MessageBox.Show("El cuadrado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tLadoCuadrado.Focus();
                 }
-                else fNueva = new Cuadrado(double.Parse(tLadoCuadrado.Text));
+                else { fNueva = new Cuadrado(double.Parse(tLadoCuadrado.Text)); lCantidadCuadrados.Text = $"Cantidad de Cuadrados: {++cantCuadrados}"; }
             }
             else if (rbTriangulo.Checked)
             {
@@ -96,7 +97,7 @@ namespace DD_TP3_ej2
                     MessageBox.Show("El cuadrado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tLado1Triangulo.Focus(); tLado2Triangulo.Focus(); tLado3Triangulo.Focus(); tLado1Triangulo.Focus();
                 }
-                else fNueva = new Triangulo(lado1, lado2, lado3);
+                else { fNueva = new Triangulo(lado1, lado2, lado3); lCantidadTriangulos.Text = $"Cantidad de Triangulos: {++cantTriangulos}"; }
             }
             else if(rbRectangulo.Checked)
             {
@@ -105,11 +106,12 @@ namespace DD_TP3_ej2
                     MessageBox.Show("El rectangulo es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tLado1.Focus();
                 }
-                else fNueva = new Rectangulo(double.Parse(tLado1.Text), double.Parse(tLado2.Text));
+                else { fNueva = new Rectangulo(double.Parse(tLado1.Text), double.Parse(tLado2.Text)); lCantidadRectangulos.Text = $"Cantidad de Rectangulos: {++cantRectangulos}"; }
             }
 
             listFiguras.Add(fNueva);
             actualizarListBox();
+            lCantidadFiguras.Text = $"Cantidad de Figuras: {listFiguras.Count}";
         }
 
         private void bCerrar_Click(object sender, EventArgs e)
