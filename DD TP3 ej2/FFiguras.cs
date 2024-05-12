@@ -55,14 +55,56 @@ namespace DD_TP3_ej2
         }
 
         private void actualizarListBox()
-        {//No necesito recibir nada por parametro
+        {
             lbFiguras.Items.Clear();
-            //for (int i = 0; i < cant; i++) ;
-            //lbFiguras.Items.Add(a[i].mostrar()); //Acá va un ToString()
+            foreach (Figura f in listFiguras)
+                lbFiguras.Items.Add(f.ToString());
         }
         private void bAgregar_Click(object sender, EventArgs e)
         {
-          
+            Figura fNueva = new Circulo(1);
+            if (rbCirculo.Checked)
+            {
+                if (tRadioCirculo.Text == "")
+                {
+                    MessageBox.Show("El radio ingresado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tRadioCirculo.Focus();
+                }
+                else fNueva = new Circulo(double.Parse(tRadioCirculo.Text));
+            }
+            else if (rbCuadrado.Checked)
+            {
+                if (tLadoCuadrado.Text == "")
+                {
+                    MessageBox.Show("El cuadrado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tLadoCuadrado.Focus();
+                }
+                else fNueva = new Cuadrado(double.Parse(tLadoCuadrado.Text));
+            }
+            else if (rbTriangulo.Checked)
+            {
+                double lado1 = (tLado1Triangulo.Text != "") ? double.Parse(tLado1Triangulo.Text) : 0;
+                double lado2 = (tLado2Triangulo.Text != "") ? double.Parse(tLado2Triangulo.Text) : 0;
+                double lado3 = (tLado3Triangulo.Text != "") ? double.Parse(tLado3Triangulo.Text) : 0;
+                if (!Triangulo.trianguloValido(lado1, lado2, lado3))
+                {
+                    MessageBox.Show("El cuadrado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tLado1Triangulo.Focus(); tLado2Triangulo.Focus(); tLado3Triangulo.Focus(); tLado1Triangulo.Focus();
+                }
+                else fNueva = new Triangulo(lado1, lado2, lado3);
+            }
+            else if(rbRectangulo.Checked)
+            {
+                if (tLado1.Text == "" || tLado2.Text == "")
+                {
+                    MessageBox.Show("El rectangulo es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tLado1.Focus();
+                }
+                else fNueva = new Rectangulo(double.Parse(tLado1.Text), double.Parse(tLado2.Text));
+            }
+
+            listFiguras.Add(fNueva); cantFiguras++;
+            actualizarListBox();
         }
 
         private void bCerrar_Click(object sender, EventArgs e)

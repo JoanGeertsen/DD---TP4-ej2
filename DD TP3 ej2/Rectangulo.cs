@@ -46,7 +46,7 @@ namespace DD_TP3_ej2
             return altura * 2 + basee * 2;
         }
 
-        public string mostrar() //Cambiar a ToString
+        public override string ToString()
         {
             return $"Base: {basee} Altura: {altura}";
         }
