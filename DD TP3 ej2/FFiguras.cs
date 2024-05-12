@@ -56,9 +56,19 @@ namespace DD_TP3_ej2
 
         private void actualizarListBox()
         {
+            Type t=typeof(Circulo); 
+            if (rbCuadrado.Checked) t= typeof(Cuadrado);
+            else if (rbTriangulo.Checked) t= typeof(Triangulo);
+            else if (rbRectangulo.Checked) t= typeof(Rectangulo);
+
+
+
             lbFiguras.Items.Clear();
-            foreach (Figura f in listFiguras)
-                lbFiguras.Items.Add(f.ToString());
+            foreach (Figura f in listFiguras)            
+                if(f.GetType() == t)
+                    lbFiguras.Items.Add(f.ToString());
+            
+                
         }
         private void bAgregar_Click(object sender, EventArgs e)
         {
