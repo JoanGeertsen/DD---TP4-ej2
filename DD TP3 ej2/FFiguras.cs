@@ -6,14 +6,12 @@ namespace DD_TP3_ej2
     public partial class FFiguras : Form
     {
         #region Atributos
-        private List<Figura> listFiguras;
-        private int cantFiguras;
+        private List<Figura> listFiguras;   
         #endregion
         public FFiguras()
         {
             InitializeComponent();
-            listFiguras = new List<Figura>();
-            cantFiguras = 0;
+            listFiguras = new List<Figura>();            
         }
 
         #region Funcionalidades
@@ -64,7 +62,8 @@ namespace DD_TP3_ej2
             lbFiguras.Items.Clear();
             foreach (Figura f in listFiguras)            
                 if(f.GetType() == t)
-                    lbFiguras.Items.Add(f.ToString());             
+                    lbFiguras.Items.Add(f.ToString());
+            lCantidadFiguras.Text = $"Cantidad de Figuras: {listFiguras.Count}";
         }
         private void bAgregar_Click(object sender, EventArgs e)
         {
@@ -109,7 +108,7 @@ namespace DD_TP3_ej2
                 else fNueva = new Rectangulo(double.Parse(tLado1.Text), double.Parse(tLado2.Text));
             }
 
-            listFiguras.Add(fNueva); cantFiguras++;
+            listFiguras.Add(fNueva);
             actualizarListBox();
         }
 
