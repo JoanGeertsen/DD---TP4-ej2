@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joang\\source\\repos\\DD TP4 ej2\\DD TP3 ej2\\DD TP4 ej2.csproj": {}
+    "C:\\Users\\joang\\Desktop\\DD TP4 ej2\\DD---TP4-ej2\\DD TP3 ej2\\DD TP4 ej2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joang\\source\\repos\\DD TP4 ej2\\DD TP3 ej2\\DD TP4 ej2.csproj": {
+    "C:\\Users\\joang\\Desktop\\DD TP4 ej2\\DD---TP4-ej2\\DD TP3 ej2\\DD TP4 ej2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joang\\source\\repos\\DD TP4 ej2\\DD TP3 ej2\\DD TP4 ej2.csproj",
+        "projectUniqueName": "C:\\Users\\joang\\Desktop\\DD TP4 ej2\\DD---TP4-ej2\\DD TP3 ej2\\DD TP4 ej2.csproj",
         "projectName": "DD TP4 ej2",
-        "projectPath": "C:\\Users\\joang\\source\\repos\\DD TP4 ej2\\DD TP3 ej2\\DD TP4 ej2.csproj",
+        "projectPath": "C:\\Users\\joang\\Desktop\\DD TP4 ej2\\DD---TP4-ej2\\DD TP3 ej2\\DD TP4 ej2.csproj",
         "packagesPath": "C:\\Users\\joang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joang\\source\\repos\\DD TP4 ej2\\DD TP3 ej2\\obj\\",
+        "outputPath": "C:\\Users\\joang\\Desktop\\DD TP4 ej2\\DD---TP4-ej2\\DD TP3 ej2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joang\\AppData\\Roaming\\NuGet\\NuGet.Config",

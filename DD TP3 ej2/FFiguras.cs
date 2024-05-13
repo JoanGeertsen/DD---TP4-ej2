@@ -47,7 +47,7 @@ namespace DD_TP3_ej2
 
         private void actualizarGruposVisibles(GroupBox gb, Label l)
         {
-            gbCirculo.Visible = true; gbCuadrado.Visible = false; gbTriangulo.Visible = false; gbRectangulo.Visible = false;
+            gbCirculo.Visible = false; gbCuadrado.Visible = false; gbTriangulo.Visible = false; gbRectangulo.Visible = false;
             gb.Visible = true;
             lCantidadCirculos.Visible = false; lCantidadCuadrados.Visible = false; lCantidadTriangulos.Visible = false; lCantidadRectangulos.Visible = false;
             l.Visible = true;
@@ -68,7 +68,6 @@ namespace DD_TP3_ej2
         }
         private void bAgregar_Click(object sender, EventArgs e)
         {
-            Figura fNueva = new Circulo(1);
             if (rbCirculo.Checked)
             {
                 if (tRadioCirculo.Text == "")
@@ -76,7 +75,7 @@ namespace DD_TP3_ej2
                     MessageBox.Show("El radio ingresado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tRadioCirculo.Focus();
                 }
-                else { fNueva = new Circulo(double.Parse(tRadioCirculo.Text)); lCantidadCirculos.Text = $"Cantidad de Circulos: {++cantCirculos}"; }
+                else { listFiguras.Add(new Circulo(double.Parse(tRadioCirculo.Text))); lCantidadCirculos.Text = $"Cantidad de Circulos: {++cantCirculos}"; }
             }
             else if (rbCuadrado.Checked)
             {
@@ -85,7 +84,7 @@ namespace DD_TP3_ej2
                     MessageBox.Show("El cuadrado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tLadoCuadrado.Focus();
                 }
-                else { fNueva = new Cuadrado(double.Parse(tLadoCuadrado.Text)); lCantidadCuadrados.Text = $"Cantidad de Cuadrados: {++cantCuadrados}"; }
+                else { listFiguras.Add(new Cuadrado(double.Parse(tLadoCuadrado.Text))); lCantidadCuadrados.Text = $"Cantidad de Cuadrados: {++cantCuadrados}"; }
             }
             else if (rbTriangulo.Checked)
             {
@@ -94,10 +93,10 @@ namespace DD_TP3_ej2
                 double lado3 = (tLado3Triangulo.Text != "") ? double.Parse(tLado3Triangulo.Text) : 0;
                 if (!Triangulo.trianguloValido(lado1, lado2, lado3))
                 {
-                    MessageBox.Show("El cuadrado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El triangulo es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tLado1Triangulo.Focus(); tLado2Triangulo.Focus(); tLado3Triangulo.Focus(); tLado1Triangulo.Focus();
                 }
-                else { fNueva = new Triangulo(lado1, lado2, lado3); lCantidadTriangulos.Text = $"Cantidad de Triangulos: {++cantTriangulos}"; }
+                else { listFiguras.Add(new Triangulo(lado1, lado2, lado3)); lCantidadTriangulos.Text = $"Cantidad de Triangulos: {++cantTriangulos}"; }
             }
             else if(rbRectangulo.Checked)
             {
@@ -106,10 +105,9 @@ namespace DD_TP3_ej2
                     MessageBox.Show("El rectangulo es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tLado1.Focus();
                 }
-                else { fNueva = new Rectangulo(double.Parse(tLado1.Text), double.Parse(tLado2.Text)); lCantidadRectangulos.Text = $"Cantidad de Rectangulos: {++cantRectangulos}"; }
+                else { listFiguras.Add(new Rectangulo(double.Parse(tLado1.Text), double.Parse(tLado2.Text))); lCantidadRectangulos.Text = $"Cantidad de Rectangulos: {++cantRectangulos}"; }
             }
-
-            listFiguras.Add(fNueva);
+            
             actualizarListBox();
             lCantidadFiguras.Text = $"Cantidad de Figuras: {listFiguras.Count}";
         }

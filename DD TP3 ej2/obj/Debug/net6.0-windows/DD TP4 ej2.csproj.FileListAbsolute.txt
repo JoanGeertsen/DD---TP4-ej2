@@ -14,3 +14,19 @@ C:\Users\joang\source\repos\DD TP4 ej2\DD TP3 ej2\obj\Debug\net6.0-windows\refin
 C:\Users\joang\source\repos\DD TP4 ej2\DD TP3 ej2\obj\Debug\net6.0-windows\DD TP4 ej2.pdb
 C:\Users\joang\source\repos\DD TP4 ej2\DD TP3 ej2\obj\Debug\net6.0-windows\DD TP4 ej2.genruntimeconfig.cache
 C:\Users\joang\source\repos\DD TP4 ej2\DD TP3 ej2\obj\Debug\net6.0-windows\ref\DD TP4 ej2.dll
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\bin\Debug\net6.0-windows\DD TP4 ej2.exe
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\bin\Debug\net6.0-windows\DD TP4 ej2.deps.json
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\bin\Debug\net6.0-windows\DD TP4 ej2.runtimeconfig.json
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\bin\Debug\net6.0-windows\DD TP4 ej2.dll
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\bin\Debug\net6.0-windows\DD TP4 ej2.pdb
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\obj\Debug\net6.0-windows\DD_TP3_ej2.FFiguras.resources
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\obj\Debug\net6.0-windows\DD TP4 ej2.csproj.GenerateResource.cache
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\obj\Debug\net6.0-windows\DD TP4 ej2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\obj\Debug\net6.0-windows\DD TP4 ej2.AssemblyInfoInputs.cache
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\obj\Debug\net6.0-windows\DD TP4 ej2.AssemblyInfo.cs
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\obj\Debug\net6.0-windows\DD TP4 ej2.csproj.CoreCompileInputs.cache
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\obj\Debug\net6.0-windows\DD TP4 ej2.dll
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\obj\Debug\net6.0-windows\refint\DD TP4 ej2.dll
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\obj\Debug\net6.0-windows\DD TP4 ej2.pdb
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\obj\Debug\net6.0-windows\DD TP4 ej2.genruntimeconfig.cache
+C:\Users\joang\Desktop\DD TP4 ej2\DD---TP4-ej2\DD TP3 ej2\obj\Debug\net6.0-windows\ref\DD TP4 ej2.dll
