@@ -21,28 +21,34 @@ namespace DD_TP3_ej2
         {
             asignarKeyPress(); asignarValidaciones();
         }
-        private bool obtenerYValidarIndex(out int index)
-        {
-            bool validez = true;
-            index = lbFiguras.SelectedIndex;
-            if (index == -1)
-            {
-                MessageBox.Show("Debe seleccionar una figura", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                validez = false;
-            }
-            return validez;
+        private bool obtenerYValidarIndice(out int index)
+        {            
+            index = lbFiguras.SelectedIndex;           
+            return index != -1;
         }
 
         private void bArea_Click(object sender, EventArgs e)
         {
-            if (obtenerYValidarIndex(out int i)) 
-                MessageBox.Show($"El área es: {listFiguras[i].area()}cm²", "Resultado:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (!obtenerYValidarIndice(out int i))
+                MessageBox.Show("Debe seleccionar una figura", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                Type tipoSeleccionado = obtenerTipoSeleccionado();
+                List<Figura> listAux = listFiguras.FindAll(figura => figura.GetType() == tipoSeleccionado);
+                MessageBox.Show($"El área es: {listAux[i].area()}cm²", "Resultado:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }                
         }
 
         private void bPerimetro_Click(object sender, EventArgs e)
         {
-            if (obtenerYValidarIndex(out int i)) ;
-                MessageBox.Show($"El perímetro es: {listFiguras[i].perimetro()}cm", "Resultado:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (!obtenerYValidarIndice(out int i))
+                MessageBox.Show("Debe seleccionar una figura", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                Type tipoSeleccionado = obtenerTipoSeleccionado();
+                List<Figura> listAux = listFiguras.FindAll(figura => figura.GetType() == tipoSeleccionado);
+                MessageBox.Show($"El perímetro es: {listAux[i].perimetro()}cm", "Resultado:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void actualizarGruposVisibles(GroupBox gb, Label l)
@@ -54,17 +60,25 @@ namespace DD_TP3_ej2
             errorProvider.Clear();
         }
 
+        private Type obtenerTipoSeleccionado()
+        {
+            Type t = typeof(Circulo);
+
+            if (rbCuadrado.Checked) t = typeof(Cuadrado);
+            else if (rbTriangulo.Checked) t = typeof(Triangulo);
+            else if (rbRectangulo.Checked) t = typeof(Rectangulo);
+
+            return t;
+        }
+
         private void actualizarListBox()
         {
-            Type t=typeof(Circulo); 
-            if (rbCuadrado.Checked) t= typeof(Cuadrado);
-            else if (rbTriangulo.Checked) t= typeof(Triangulo);
-            else if (rbRectangulo.Checked) t= typeof(Rectangulo);
+            Type t = obtenerTipoSeleccionado();
 
             lbFiguras.Items.Clear();
             foreach (Figura f in listFiguras)            
                 if(f.GetType() == t)
-                    lbFiguras.Items.Add(f.ToString());            
+                    lbFiguras.Items.Add(f.ToString());  
         }
         private void bAgregar_Click(object sender, EventArgs e)
         {
